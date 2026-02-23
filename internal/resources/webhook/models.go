@@ -153,6 +153,7 @@ func (w *Webhook) headersToSDK() *[]sdk.WebhookHeader {
 		headers = append(headers, sdk.WebhookHeader{
 			Key:   key,
 			Value: value.ValueString(),
+			Secret: value.IsSensitive(),
 		})
 	}
 
